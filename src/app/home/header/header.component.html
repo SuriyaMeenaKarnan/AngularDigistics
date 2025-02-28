@@ -1,0 +1,72 @@
+<div class="progress-bar" id="main-bar">
+    <!-- *ngIf="barWidth!='0%'" -->
+      <div id="progress" class="bar" [style.width]="widthe"></div>
+      <div class="img">
+          <img src="../../../assets/images/logo.png" alt="">
+      </div>
+      <div class="width" [innerHTML]='widthe'></div>
+  </div>
+
+
+
+<header id="nav-container" ngxHideOnScroll  [class.scrolled]="isScrolled">
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <a href="#home"><img src="../../../assets/images/logo.png" alt="logo" /></a>
+            </div>
+            <div class="nav-menu-button" (click)="navBtn()">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <div class="nav-menu-wrapper">
+                <nav class="nav-menu" >
+                    <ul class="nav-links">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <!-- <li><a routerLink="/aboutBan/aboutB" class="nav-link">About</a></li> -->
+                        <!-- <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#collection" class="nav-link">Collections</a></li>
+                        <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                        <li><a href="#team" class="nav-link">Team</a></li>
+                        <li><a href="#artist" class="nav-link">Artist</a></li> -->
+                        <li><a href="#faqs" class="nav-link">FAQs</a></li>
+                        <li class="nav-item dropdown">
+                            <span class="dropdown-toggle nav-link" id="navbarDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
+                                Pages
+                            </span>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/AboutM/aboutBan">About Us</a></li>
+                                
+                                <li><a class="dropdown-item" href="/ContactM/contactBanner">Contact</a></li>
+
+                                <li><a class="dropdown-item " href="/BloglistM/blogListBanner">Blog Listing</a></li>
+
+                                <li><a class="dropdown-item" href="/BlogdetM/blogDetBanner">Blog Details</a></li>
+
+                                <li><a class="dropdown-item" href="/PrivacyM/privacyBanner">Privacy Policy</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- <div class="nav-social">
+                        <a href="#!" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#!" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#!" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div> -->
+                    <div class="nav-img infiniteBounce">
+                        <img src="../../../assets/images/nav-wrapper-img.png" alt="nav-img">
+                    </div>
+                    <div class="nav-shapes">
+                        <img class="particle-black infiniteZoomInOut" src="../../../assets/images/particle-black.png"
+                            alt="nav-shapes">
+                        <img class="particle-white infiniteZoomInOut" src="../../../assets//images/particle-white.png"
+                            alt="nav-shapes" />
+                        <img class="particle-orange infiniteZoomInOut" src="../../../assets/images/particle-orange.png"
+                            alt="nav-shapes" />
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

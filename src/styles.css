@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~animate.css/animate.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #ccc;
+    /* or add it to the track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #182022;
+  }
+
+  .line_height{
+    line-height: 32px;
+  }
+
+  .mobile-menu-open ~ .home{
+    position: relative;
+    z-index: -1;
+  }

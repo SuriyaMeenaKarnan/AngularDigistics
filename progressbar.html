@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #progress{
+            height: 5px;
+            border-radius: 5px;
+            background-color: blue;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress"></div>
+
+    <script>
+        var bar = document.getElementById("progress");
+
+        var count = 0;
+
+        if(count <= 100){
+            setInterval(() => {
+            if(count <= 100){
+                bar.style.width = count + "%";
+            count++;
+            }
+        }, 50)
+        console.log(count)
+        }
+    </script>
+</body>
+</html>
