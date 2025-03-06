@@ -17,8 +17,7 @@ export class HeaderComponent implements OnInit {
   width = document.querySelector(".width");
         
   count: number = 0;
-  intervalSubscription: any;
-  widthe: string = "";
+  barWidth: string = "";
   isScrolled = false;
 
   @HostListener('window:scroll', [])
@@ -36,7 +35,7 @@ export class HeaderComponent implements OnInit {
         
           // 
         if(this.count <= 100){
-          this.widthe=this.count + "%";
+          this.barWidth=this.count + "%";
           this.count++;
         if(this.count == 100){
           container?.classList.add("hide");

@@ -13,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import {MatButtonModule} from '@angular/material/button'; 
 import { RouterModule, Routes } from '@angular/router';
 import { NgwWowModule } from "ngx-wow";
+import { AddFormComponent } from './add-form/add-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -69,14 +71,17 @@ const routes: Routes = [
     JoinCommunityComponent,
     ArtistComponent,
     FaqComponent,
-    FooterComponent
+    FooterComponent,
+    AddFormComponent
   ],
   imports: [
     CommonModule, 
     MatButtonModule,
     // AboutModule,
     NgwWowModule,
-     RouterModule.forChild(routes)
+     RouterModule.forChild(routes),
+     FormsModule,
+     ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,

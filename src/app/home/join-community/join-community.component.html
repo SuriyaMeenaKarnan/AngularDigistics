@@ -72,9 +72,57 @@
                                     data-bs-target="#joinNow">Register
                                     Now.</a></p>
                         </div>
+                        <button class="temp-join-btn modal-title">JOIN NOW</button>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="temp-join-btn">
+            <app-add-form id="modal-1">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" (click)="modalService.close();"></button>
+                </div>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Existing User</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-container" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                                <div class="input-container">
+                                    <label>Name</label>
+                                    <input type="text" formControlName="firstName" class="form-control" placeholder="Enter Name" />
+                                </div>
+                                <div class="input-container">
+                                    <label>Username</label>
+                                    <input type="text" formControlName="userName" class="form-control" placeholder="Enter Username" />
+                                </div>
+                                <div class="input-container">
+                                    <label>Email</label>
+                                    <input type="text" formControlName="email" class="form-control" placeholder="Enter Email" />
+                                </div>
+                                <div class="input-container">
+                                    <label>Password</label>
+                                    <input type="text" formControlName="password" class="form-control" placeholder="Enter Password" />
+                                </div>
+                                <button class="btn btn-primary">Join Now</button>
+                                <div class="another-way">
+                                    <span>Another way to Join Now</span>
+                                    <div>
+                                        <a class="twitter"><i class="fa fa-twitter" aria-hidden="true" style="color:#000"></i></a>
+                                    <a class="facebook"><i class="fa fa-facebook" aria-hidden="true" style="color:#000" ></i></a>
+                                    <a class="linkedin"><i class="fa fa-linkedin" aria-hidden="true" style="color:#000"></i></a>
+                                    </div>
+                                </div>
+                                <p>Already have an Account? <a href="" data-bs-toggle="modal"
+                                        data-bs-target="#existingUser">Sign In.</a></p>
+                                </form>  
+                        </div>
+                    </div>
+                </div>
+            </app-add-form>
         </div>
 
 
@@ -86,24 +134,27 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-container">
+                        <form class="form-container" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                             <div class="input-container">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Enter Name" />
+                                <input type="text" class="form-control" placeholder="Enter Name" formControlName="firstName">
+                            <div class="error-msg" *ngIf="profileForm.controls?.['firstName']?.errors?.['required']&& (profileForm.controls?.['firstName']?.dirty || profileForm.controls?.['firstName']?.touched)">
+                                    This Field is Required.
+                                  </div>
                             </div>
                             <div class="input-container">
                                 <label>Username</label>
-                                <input type="text" class="form-control" placeholder="Enter Username" />
+                                <input type="text" class="form-control" placeholder="Enter Username" formControlName="userName"/>
                             </div>
                             <div class="input-container">
                                 <label>Email</label>
-                                <input type="text" class="form-control" placeholder="Enter Email" />
+                                <input type="text" class="form-control" placeholder="Enter Email" formControlName="email"/>
                             </div>
                             <div class="input-container">
                                 <label>Password</label>
-                                <input type="text" class="form-control" placeholder="Enter Password" />
+                                <input type="password" class="form-control" placeholder="Enter Password" formControlName="password"/>
                             </div>
-                            <button class="btn btn-primary">Join Now</button>
+                            <button class="btn btn-primary" [disabled]="!profileForm.valid">Join Now</button>
                             <div class="another-way">
                                 <span>Another way to Join Now</span>
                                 <div>
@@ -114,7 +165,7 @@
                             </div>
                             <p>Already have an Account? <a href="" data-bs-toggle="modal"
                                     data-bs-target="#existingUser">Sign In.</a></p>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -132,7 +183,7 @@
                         <div class="form-container">
                             <div class="input-container">
                                 <label>Username</label>
-                                <input type="text" class="form-control" placeholder="Enter Name" />
+                                <input type="text" class="form-control" placeholder="Enter Name"/>
                             </div>
                             <div class="input-container">
                                 <label>Password <a href="#">Forgot Password</a></label>

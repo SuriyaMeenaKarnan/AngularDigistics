@@ -939,3 +939,14 @@ h6 {
   position: relative;
   z-index: 10;
 }
+
+.error-msg{
+  color: red;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.temp-join-btn{
+  display: none;
+}

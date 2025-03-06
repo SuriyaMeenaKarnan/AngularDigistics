@@ -1,10 +1,10 @@
 <div class="progress-bar" id="main-bar">
     <!-- *ngIf="barWidth!='0%'" -->
-      <div id="progress" class="bar" [style.width]="widthe"></div>
+      <div id="progress" class="bar" [style.width]="barWidth"></div>
       <div class="img">
           <img src="../../../assets/images/logo.png" alt="">
       </div>
-      <div class="width" [innerHTML]='widthe'></div>
+      <div class="width" [innerHTML]='barWidth'></div>
   </div>
 
 
@@ -32,9 +32,9 @@
                         <li><a href="#artist" class="nav-link">Artist</a></li> -->
                         <li><a href="#faqs" class="nav-link">FAQs</a></li>
                         <li class="nav-item dropdown">
-                            <span class="dropdown-toggle nav-link" id="navbarDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
+                            <a class="dropdown-toggle nav-link" id="navbarDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
                                 Pages
-                            </span>
+                            </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" routerLink="/AboutM/aboutBan">About Us</a></li>
                                 

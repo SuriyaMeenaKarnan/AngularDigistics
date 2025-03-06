@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { NgwWowService } from 'ngx-wow';
+import { ModalServiceService } from 'src/app/serviceFiles/modal-service.service';
 
 @Component({
   selector: 'app-join-community',
@@ -8,10 +10,26 @@ import { NgwWowService } from 'ngx-wow';
 })
 export class JoinCommunityComponent implements OnInit {
 
-  constructor(private wowSer:NgwWowService) { }
+  constructor(private wowSer:NgwWowService, public modalService:ModalServiceService, private formBuilder: FormBuilder) { }
+
+  profileForm = this.formBuilder.group({
+    firstName: ['', [Validators.required, Validators.minLength(5)]],
+    userName: ['', [Validators.required, Validators.minLength(5)]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,15}')]]
+  })
 
   ngOnInit(): void {
     this.wowSer.init()
+  }
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.profileForm.value);
+  }
+
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
   }
 
   // adjustElementHeights() {
